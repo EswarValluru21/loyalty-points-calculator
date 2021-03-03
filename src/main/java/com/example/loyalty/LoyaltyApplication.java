@@ -9,6 +9,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
+import javax.annotation.PostConstruct;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -23,7 +24,7 @@ public class LoyaltyApplication {
         SpringApplication.run(LoyaltyApplication.class, args);
     }
 
-    @Bean
+    @PostConstruct
     public void loadData() {
         CustomerEntity customerEntity1 = new CustomerEntity("1", "Bruce Banner", 0, null);
         CustomerEntity customerEntity2 = new CustomerEntity("2", "Stephen Strange", 0, null);
